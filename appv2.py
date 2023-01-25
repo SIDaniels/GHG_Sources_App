@@ -82,7 +82,7 @@ def update_output(value):
             #hoverdistance=2,
             title=dict(text="Carbon Emissions Sites Across the Globe, 2021",font=dict(size=50, color='green')),
             mapbox=dict(
-                accesstoken=mapbox_access_token,
+                accesstoken=os.environ['mapbox_access_token'],
                 #bearing=25,
                 style='light',
                 center=dict(
