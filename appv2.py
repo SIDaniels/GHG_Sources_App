@@ -17,7 +17,7 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 # in callbacks to transform the output value to logarithmic
 
 # Connect to database
-engine = create_engine(os.environ['MYSQL_URL'@'MYSQLHOST':'MYSQLPORT'/'MYSQLDATABASE'])
+engine = create_engine(os.environ['MYSQL_URL'])
 
 
 app.layout = html.Div([
