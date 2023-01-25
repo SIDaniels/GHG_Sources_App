@@ -4,6 +4,8 @@ import plotly.graph_objs as go
 from dash import Dash, dcc, html, Input, Output
 import pandas as pd
 import numpy as np
+from sqlalchemy import create_engine
+
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -13,8 +15,9 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 # Use the following function when accessing the value of 'my-range-slider'
 # in callbacks to transform the output value to logarithmic
 
-#def transform_value(value):
-#    return 10 ** value
+# Connect to database
+engine = create_engine(os.environ['DATABASE_URL'])
+
 
 app.layout = html.Div([
 
@@ -41,6 +44,7 @@ app.layout = html.Div([
     Output('graph', 'figure'),
     Input('non-linear-range-slider', 'value'))
 def update_output(value):
+    all2_21_rev = pd.read_sql('all2_21_rev', engine)
     all2_sub=all2_21_rev[(all2_21_rev['log10_emissions_quantity']>=value[0])&(all2_21_rev['log10_emissions_quantity']<=value[1])] #could be result of sql query and the result is what's required
     #when run sql query only pull the columns that you need for the app code below
     # Create figure
