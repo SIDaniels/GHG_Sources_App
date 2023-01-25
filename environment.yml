@@ -1,0 +1,10 @@
+name: climate_TRACE2
+dependencies:
+ - python=3.9
+ - pip
+ - pip:
+   - pandas
+   - numpy
+   - dash
+   - SQLAlchemy
+   - plotly
