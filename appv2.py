@@ -1,4 +1,9 @@
 #https://dash.plotly.com/dash-core-components/rangeslider
+import plotly.offline as py     
+import plotly.graph_objs as go
+from dash import Dash, dcc, html, Input, Output
+import pandas as pd
+import numpy as np
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
