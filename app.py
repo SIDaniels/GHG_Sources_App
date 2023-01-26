@@ -68,7 +68,7 @@ app.layout = html.Div([
                     value=[b for b in sorted(all2_21_rev['gas'].unique())],
             ),
 
-        ], className='three columns'
+        ],
         
         ),
     html.Div([
