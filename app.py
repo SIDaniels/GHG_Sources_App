@@ -1,20 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
+import os
 import plotly.offline as py     
 import plotly.graph_objs as go
-
-
-# In[2]:
-
-
 from dash import Dash, dcc, html, Input, Output
 import pandas as pd
 import numpy as np
-
+from sqlalchemy import create_engine
 
 
 # In[5]:
