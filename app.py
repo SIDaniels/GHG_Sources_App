@@ -16,23 +16,6 @@ import pandas as pd
 import numpy as np
 
 
-# In[20]:
-
-
-print(pd.__version__)
-
-
-# In[3]:
-
-
-all2_21_rev=pd.read_csv("/Users/sidan/Documents/Data_Engineering/all2_21_rev.csv")
-
-
-# In[4]:
-
-
-mapbox_access_token = 'pk.eyJ1IjoiZWNvMDA3IiwiYSI6ImNsY3UxbTNiNDBnOWk0MXFwa2hpYThiZHkifQ.ZTqO3ZHxPTgE7mVDde2IZg'
-
 
 # In[5]:
 
