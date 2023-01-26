@@ -37,6 +37,9 @@ app = Dash(__name__) #, external_stylesheets=external_stylesheets
 blackbold={'color':'black', 'font-weight': 'bold'}
 
 
+# Connect to database
+engine = create_engine('mysql+py'+os.environ['MYSQL_URL'])
+
 app.layout = html.Div([
                 html.Div([
                     html.Div([
@@ -106,7 +109,8 @@ app.layout = html.Div([
     Input('gas_type', 'value')])
 
 def update_output(value, chosen_sector, chosen_gas):
-    all2_sub1=all2_21_rev[(all2_21_rev['log10_emissions_quantity']>=value[0])&(all2_21_rev['log10_emissions_quantity']<=value[1])] #could be result of sql query and the result is what's required
+  all2_21_rev = pd.read_sql('all2_21_rev', engine)    
+   all2_sub1=all2_21_rev[(all2_21_rev['log10_emissions_quantity']>=value[0])&(all2_21_rev['log10_emissions_quantity']<=value[1])] #could be result of sql query and the result is what's required
     all2_sub=all2_sub1[(all2_sub1['sector'].isin(chosen_sector)) & (all2_sub1['gas'].isin(chosen_gas))]
     #when run sql query only pull the columns that you need for the app code below
     # Create figure
