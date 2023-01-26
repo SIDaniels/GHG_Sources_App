@@ -132,8 +132,8 @@ def update_output(value, chosen_sector, chosen_gas):
                     #customdata=all2_sub['website']
     )]
 
-    # Return figure
-    return {
+    #Return figure:
+	return {
         'data': locations,
         'layout': go.Layout(
             uirevision= 'foo', #preserves state of figure/map after callback activated
