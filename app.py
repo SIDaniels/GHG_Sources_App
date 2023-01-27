@@ -45,8 +45,6 @@ app.layout = html.Div([
                     'list-style':'none','text-indent': '17px','white-space':'nowrap'}),
                 html.Li("power", className='circle', style={'background': '#FF0000','color':'black',
                     'list-style':'none','text-indent': '17px'}),
-                html.Li("buildings", className='circle', style={'background': '#00ff00','color':'black',
-                    'list-style':'none','text-indent': '17px'}),
                 html.Li("waste",  className='circle', style={'background': '#824100','color':'black',
                     'list-style':'none','text-indent': '17px'}),
                 html.Li("manufacturing", className='circle', style={'background': '#00bfff','color':'black',
@@ -115,9 +113,8 @@ def update_output(value, chosen_sector, chosen_gas):
                     marker =go.scattermapbox.Marker(
 		            size=4,
 		            color = all2_sub['color'],
-		            #colorscale='rainbow',
 		            opacity=0.5,
-		            showscale=True,), #I don't know why this doesn't work... 
+		            showscale=False,), 
                     #unselected={'marker' : {'opacity':1}},
                     #selected={'marker' : {'opacity':0.5, 'size':25}},
                     hoverinfo='text',
