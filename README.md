@@ -1,4 +1,4 @@
-# GHG_Sources_App
+# Greenhouse Gases Sources App
 
 --> NOTE: Work in progress - New data/app hosting platform is needed for deployment
 
